@@ -10,5 +10,7 @@ data class Character(
     val image:String
 
 )
-data class CharacterResponse(@SerializedName("results")val results: List<Character>)
+data class CharacterResponse(
+    @SerializedName("results")
+    val results: List<Character>)
 
