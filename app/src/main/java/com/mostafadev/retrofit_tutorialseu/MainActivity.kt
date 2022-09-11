@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.mostafadev.retrofit_tutorialseu.adapter.Adapter
 import com.mostafadev.retrofit_tutorialseu.model.CharacterResponse
 import com.mostafadev.retrofit_tutorialseu.remote.RetrofitInstance
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        recyclerView.layoutManager = GridLayoutManager(this,2)
+        recyclerView.layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
         recyclerView.setHasFixedSize(true)
 
 
