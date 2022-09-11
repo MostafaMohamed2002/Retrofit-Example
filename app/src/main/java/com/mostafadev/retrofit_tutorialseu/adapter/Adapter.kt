@@ -16,6 +16,24 @@ import kotlinx.android.synthetic.main.item.view.*
 
 class Adapter(private val character:List<Character>):RecyclerView.Adapter<Adapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+
+        companion object{
+            fun from(parent: ViewGroup):ViewHolder{
+                val layoutInflater=LayoutInflater.from(parent.context).inflate(R.layout.item,parent,false)
+                return ViewHolder(layoutInflater)
+            }
+        }
+
+
+
+
+
+
+
+
+
+
         fun bindData(character: Character) {
             itemView.textView.text=character.name
              val image=itemView.imageView
@@ -32,7 +50,8 @@ class Adapter(private val character:List<Character>):RecyclerView.Adapter<Adapte
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item,parent,false))
+//        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item,parent,false))
+        return ViewHolder.from(parent)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
